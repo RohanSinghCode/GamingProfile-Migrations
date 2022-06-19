@@ -9,7 +9,7 @@ read isAddMigrationFile
 timestamp=$(date "+%Y%m%d%H%M%S")
 migrationFileName="${timestamp}_${storyNumber}_${migrationName}"
 migrationStatement="Execute.Sql(\"\")"
-scriptFilePath="$(pwd)/GamingProfile-Migrations/Migrations/Scripts"
+scriptFilePath="$(pwd)/GamingProfile-Migrations/Scripts"
 if [ $isAddMigrationFile == "y" ]
 then
     upFileContent="--Up migration for ${migrationFileName}"
