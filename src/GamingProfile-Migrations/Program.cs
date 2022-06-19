@@ -19,6 +19,9 @@ namespace GamingProfileMigrations
             if (failedMigrations != null)
             {
                 Console.WriteLine($"Error while migrating {failedMigrations.Exception}");
+            } else
+            {
+                Console.WriteLine("Migration for Gaming Profile is finished");
             }
         }
 
@@ -41,7 +44,7 @@ namespace GamingProfileMigrations
         {
             try
             {
-                var dllPath = workingDirectory + "bin\\release\\net6.0\\GamingProfile-Migrations.dll";
+                var dllPath = workingDirectory + "\\bin\\release\\net6.0\\GamingProfile-Migrations.dll";
                 var assembly = Assembly.LoadFrom(dllPath);
                 var conventionSet = new DefaultConventionSet(defaultSchemaName: null, workingDirectory: workingDirectory);
                 var serviceProvider = new ServiceCollection()
